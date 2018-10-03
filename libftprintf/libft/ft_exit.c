@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xzhu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/02 16:15:49 by xzhu              #+#    #+#             */
-/*   Updated: 2018/10/02 16:18:51 by xzhu             ###   ########.fr       */
+/*   Created: 2018/09/01 14:00:29 by xzhu              #+#    #+#             */
+/*   Updated: 2018/09/01 14:00:32 by xzhu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LS_H
-# define FT_LS_H
+#include "libft.h"
 
-# include "../libftprintf/includes/libft.h"
-# include "../libftprintf/includes/ft_printf.h"
-# include "../libftprintf/includes/get_next_line.h"
-
-#endif
+int		ft_exit(void)
+{
+	exit(0);
+	return (0);
+}

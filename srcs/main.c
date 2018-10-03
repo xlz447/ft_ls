@@ -10,4 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/ft_ls.h"
+#include "../includes/ft_ls.h"
+
+int		main(int argc, char const *argv[])
+{
+	(void)argc;
+	(void)argv;
+	ft_printf("%s\n", "lol im doing ls");
+	ft_exit();
+	return (0);
+}

@@ -24,9 +24,9 @@ void	buf_s(t_pf *p, const void *s, short n)
 	short			empty;
 
 	src = (unsigned char *)s;
-	while (p->bufsize + n > BUFF_SIZE)
+	while (p->bufsize + n > PF_BUFF_SIZE)
 	{
-		empty = BUFF_SIZE - p->bufsize;
+		empty = PF_BUFF_SIZE - p->bufsize;
 		while (empty-- && n--)
 		{
 			p->buf[p->bufsize++] = *src++;
@@ -43,7 +43,7 @@ void	buf_s(t_pf *p, const void *s, short n)
 
 void	buf_c(t_pf *p, const char c)
 {
-	if (p->bufsize + 1 > BUFF_SIZE)
+	if (p->bufsize + 1 > PF_BUFF_SIZE)
 		buf_flush(p);
 	p->buf[p->bufsize++] = c;
 	p->totallen++;

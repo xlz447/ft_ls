@@ -93,7 +93,9 @@ LIBFTFILES =ft_putchar.c \
 			ft_lstrev.c \
 			ft_lstsort.c \
 			ft_lstat.c \
-			ft_errorexit.c
+			ft_errorexit.c \
+			ft_exit.c \
+			get_next_line.c
 
 PRINTFSRCS	= $(addprefix srcs/, $(PRINTFFILES))
 LIBSRCS		= $(addprefix libft/, $(LIBFTFILES))

@@ -19,7 +19,7 @@
 # include <wchar.h>
 # include "libft.h"
 
-# define BUFF_SIZE	2048
+# define PF_BUFF_SIZE	2048
 # define KNRM  "\x1B[0m"
 # define KRED  "\x1B[31m"
 # define KGRN  "\x1B[32m"
@@ -69,7 +69,7 @@ typedef struct				s_pf
 	short					min_w;
 	short					dollor;
 	char					*temp;
-	char					buf[BUFF_SIZE];
+	char					buf[PF_BUFF_SIZE];
 	short					bufsize;
 	short					totallen;
 	int						fd;
