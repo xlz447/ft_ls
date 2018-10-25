@@ -17,4 +17,15 @@
 # include "../libftprintf/includes/ft_printf.h"
 # include "../libftprintf/includes/get_next_line.h"
 
+typedef	struct	s_ls
+{
+	char		invalid;
+	uint32_t	arg_used;
+	uint8_t		rec;
+	uint8_t		all;
+	uint8_t		list;
+	uint8_t		rev;
+	uint8_t		time;
+}				t_ls;
+
 #endif

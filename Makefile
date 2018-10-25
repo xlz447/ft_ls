@@ -10,7 +10,7 @@ SRC		= main.c
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
 CC		= gcc
-C_FLAGS = -Wall -Wextra -Werror
+C_FLAGS = -Wall -Wextra -Werror -g
 
 FT		= ./libftprintf/
 FT_LIB	= $(addprefix $(FT),libftprintf.a)
