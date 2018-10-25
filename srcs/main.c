@@ -12,15 +12,7 @@
 
 #include "../includes/ft_ls.h"
 
-void	run(t_ls *ls, int ac, char ** av)
-{
-	if (ac - 1 == (int)ls->arg_used)
-		ft_printf("trying .\n");
-	while (ac - ++ls->arg_used > 0)
-		ft_printf("trying %s\n", av[ls->arg_used]);
-}
-
-void	set_flags(t_ls *ls, char c)
+static void	set_flags(t_ls *ls, char c)
 {
 	if (c == 'R')
 		ls->rec = 1;
@@ -32,19 +24,9 @@ void	set_flags(t_ls *ls, char c)
 		ls->rev = 1;
 	else if (c == 't')
 		ls->time = 1;
-	if (ls->rec)
-		ft_printf("R flag set\n");
-	if (ls->all)
-		ft_printf("a flag set\n");
-	if (ls->list)
-		ft_printf("l flag set\n");
-	if (ls->rev)
-		ft_printf("r flag set\n");
-	if (ls->time)
-		ft_printf("t flag set\n");
 }
 
-int		parse(t_ls *ls, int ac, char **av)
+static int	parse(t_ls *ls, int ac, char **av)
 {
 	int i;
 	int j;
@@ -58,8 +40,8 @@ int		parse(t_ls *ls, int ac, char **av)
 		{
 			if (!ft_strchr("Ralrt", av[i][j]))
 			{
-				 ls->invalid = av[i][j];
-				 return (0);
+				ls->invalid = av[i][j];
+				return (0);
 			}
 			else
 				set_flags(ls, av[i][j]);
@@ -68,10 +50,21 @@ int		parse(t_ls *ls, int ac, char **av)
 			break ;
 		ls->arg_used++;
 	}
+	ls->args_still_need_print = ac - ls->arg_used - 1;
+	if (ls->rec)
+		ft_printf("R flag set\n");
+	if (ls->all)
+		ft_printf("a flag set\n");
+	if (ls->list)
+		ft_printf("l flag set\n");
+	if (ls->rev)
+		ft_printf("r flag set\n");
+	if (ls->time)
+		ft_printf("t flag set\n");
 	return (1);
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_ls ls;
 
