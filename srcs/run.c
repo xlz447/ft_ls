@@ -14,7 +14,14 @@
 
 void	run(t_ls *ls, int ac, char **av)
 {
-	ft_printf("|%i| args need to print\n", (int)ls->args_still_need_print);
+	int i;
+
+	i = 0;
+	ft_printf("|%i| arg need to print\n", (int)ls->args_still_need_print);
+	while ((ls->args_still_need_print)--)
+	{
+		ft_printf("need to do |%s|\n", ls->args[i++]);
+	}
 	if (ac - 1 == (int)ls->arg_used)
 		ft_printf("trying .\n");
 	while (ac - ++ls->arg_used > 0)

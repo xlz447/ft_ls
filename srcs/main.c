@@ -50,7 +50,8 @@ static int	parse(t_ls *ls, int ac, char **av)
 			break ;
 		ls->arg_used++;
 	}
-	ls->args_still_need_print = ac - ls->arg_used - 1;
+	ls->args_still_need_print = ac;
+	ls->args = av + i;
 	if (ls->rec)
 		ft_printf("R flag set\n");
 	if (ls->all)

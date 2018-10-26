@@ -20,6 +20,7 @@
 typedef	struct	s_ls
 {
 	char		invalid;
+	char		**args;
 	uint32_t	args_still_need_print;
 	uint32_t	arg_used;
 	uint8_t		rec;
